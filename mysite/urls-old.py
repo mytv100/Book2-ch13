@@ -20,19 +20,11 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 from mysite.views import HomeView
-from mysite.views import (UserLoginView, UserLogoutView,
-                          UserPasswordChangeView, UserPasswordChangeDoneView,
-                          UserCreateView, UserCreateDoneTV)
+from mysite.views import UserCreateView, UserCreateDoneTV
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-
-    # url(r'^accounts/', include('django.contrib.auth.urls')),
-    url(r'^accounts/login/$', UserLoginView.as_view(), name='login'),
-    url(r'^accounts/logout/$', UserLogoutView.as_view(), name='logout'),
-    url(r'^password_change/$', UserPasswordChangeView.as_view(), name='password_change'),
-    url(r'^password_change/done/$', UserPasswordChangeDoneView.as_view(), name='password_change_done'),
-
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^accounts/register/$', UserCreateView.as_view(), name='register'),
     url(r'^accounts/register/done/$', UserCreateDoneTV.as_view(), name='register_done'),
 

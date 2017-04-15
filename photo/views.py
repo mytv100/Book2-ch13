@@ -3,7 +3,8 @@ from photo.models import Album, Photo
 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse_lazy
-from mysite.views import LoginRequiredMixin
+# from mysite.views import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 

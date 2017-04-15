@@ -12,10 +12,6 @@
             <th>Album</th>
             <th>Title</th>
             <th>Description</th>
-{% comment %}
-            <th>Image</th>
-            <th>Upload_Date</th>
-{% endcomment %}
             <th>Owner</th>
             <th>Update</th>
             <th>Delete</th>
@@ -26,10 +22,6 @@
             <td>{{ item.album }}</td>
             <td>{{ item.title }}</td>
             <td>{{ item.description|linebreaks }}</td>
-{% comment %}
-            <td>{{ item.image }}</td>
-            <td>{{ item.upload_date }}</td>
-{% endcomment %}
             <td>{{ item.owner }}</td>
             <td><a href="{% url 'photo:photo_update' item.id %}">Update</a></td>
             <td><a href="{% url 'photo:photo_delete' item.id %}">Delete</a></td>
